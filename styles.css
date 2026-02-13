@@ -1,0 +1,191 @@
+#cookie-notes-sidebar {
+  position: fixed;
+  top: 0;
+  right: -360px;
+  width: 340px;
+  height: 100%;
+  background-color: #FDC3A1;
+
+  background-image: 
+    radial-gradient(circle at 15px 25px, rgba(255,255,255,0.35) 6px, transparent 7px),
+    radial-gradient(circle at 80px 50px, rgba(255,255,255,0.25) 8px, transparent 9px),
+    radial-gradient(circle at 120px 90px, rgba(255,255,255,0.3) 5px, transparent 6px),
+    radial-gradient(circle at 50px 120px, rgba(255,255,255,0.28) 7px, transparent 8px),
+    radial-gradient(circle at 90px 20px, rgba(255,255,255,0.32) 6px, transparent 7px);
+
+  background-size: 150px 150px;
+  background-repeat: repeat;
+
+  box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+  transition: right 0.4s ease;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  font-family: "Comic Sans MS", sans-serif;
+  overflow-y: auto;
+}
+
+#cookie-notes-sidebar.open {
+  right: 0;
+}
+
+
+.rolling-cookie {
+  display: none;
+}
+#cookie-notes-sidebar.open {
+  right: 0;
+}
+
+.cookie-header {
+  background: #ffe0cc;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #6b3e26;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px dashed #e6a885;
+}
+
+.cookie-section {
+  padding: 15px;
+}
+
+.cookie-section h3 {
+  color: #6b3e26;
+}
+
+.todo-input,
+.note-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.todo-input input,
+.note-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: #fff5ef;
+}
+
+.todo-input button,
+.note-input button {
+  background: #ff9e7a;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff5ef;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+li span.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.delete-btn {
+  background: #ff9e7a;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.rolling-cookie {
+  position: absolute;
+  bottom: 10px;
+  left: -40px;
+  font-size: 28px;
+  animation: rollSide 8s linear infinite;
+}
+
+@keyframes rollSide {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(280px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(0) rotate(720deg);
+  }
+}
+
+
+#cookie-close {
+  background: #ff9e7a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background 0.2s ease;
+}
+
+#cookie-close:hover {
+  background: #ff7a4a;
+}
+
+li span {
+  color: #000000;
+}
+
+li span.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: #000000;  
+}
+.todo-input input,
+.note-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: #fff5ef;
+  color: #000000 !important; 
+  -webkit-text-fill-color: #000000 !important; 
+}
+.todo-input input::placeholder,
+.note-input input::placeholder {
+  color: #999999 !important;
+  opacity: 1;
+}
+
+#cookie-notes-sidebar {
+  display: none;
+}
+
+#cookie-notes-sidebar.open {
+  display: block;
+}
+

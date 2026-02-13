@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Notes Sidebar 🍪",
+  "version": "1.0",
+  "description": "Cute cookie-themed notes that save per website.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "icons": {
+    "16": "cookie.png",
+    "48": "cookie.png",
+    "128": "cookie.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "toggle_sidebar": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K"
+      },
+      "description": "Toggle Cookie Notes Sidebar"
+    }
+  },
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "css": ["styles.css"],
+    "run_at": "document_idle" 
+  }
+]
+}
+
+
+
+
